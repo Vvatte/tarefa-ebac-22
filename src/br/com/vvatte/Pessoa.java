@@ -1,10 +1,11 @@
 package br.com.vvatte;
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
 public class Pessoa {
+
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Digiter um nome e o sexo(-m ou -f) da pessoa separados por traço, faça isso para tres pessoas");
@@ -19,10 +20,16 @@ public class Pessoa {
 
         System.out.println(" ");
         System.out.println("As pessoas do sexo feminino são:");
-        Stream<String> pessoas = List.of(arrayNomes).stream()
-                .filter(pessoa -> pessoa.endsWith("-f"));
 
-        pessoas.forEach(System.out::println);
+        mulheres(arrayNomes);
 
+    }
+
+    public static void mulheres(String[] arrayNomes) {
+        try (Stream<String> pessoas = List.of(arrayNomes).stream()
+                .filter(pessoa -> pessoa.endsWith("-f"))) {
+
+            pessoas.forEach(System.out::println);
+        }
     }
 }
