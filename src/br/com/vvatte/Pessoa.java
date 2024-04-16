@@ -30,6 +30,6 @@ public class Pessoa {
                 .filter(pessoa -> pessoa.endsWith("-f"));
 
         pessoas.forEach(System.out::println);
-        return pessoas.toString();
+        return frase;
     }
 }
