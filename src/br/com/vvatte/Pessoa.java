@@ -26,8 +26,9 @@ public class Pessoa {
 
     public static String mulheres(String frase) {
         String[] arrayNomes = frase.split(",");
-        Stream<String> pessoas = List.of(arrayNomes).stream()
-                .filter(pessoa -> pessoa.endsWith("-f"));
+        List<String> pessoas = List.of(arrayNomes).stream()
+                .filter(pessoa -> pessoa.endsWith("-f"))
+                .toList();
 
         pessoas.forEach(System.out::println);
         return frase;
