@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 public class Pessoa {
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Digiter um nome e o sexo(-m ou -f) da pessoa separados por traço, faça isso para tres pessoas");
 
@@ -24,13 +24,12 @@ public class Pessoa {
 
     }
 
-    public String mulheres(String frase) {
+    public static String mulheres(String frase) {
         String[] arrayNomes = frase.split(",");
         Stream<String> pessoas = List.of(arrayNomes).stream()
-                .filter(pessoa -> pessoa.endsWith("-f"));{
+                .filter(pessoa -> pessoa.endsWith("-f"));
 
-            pessoas.forEach(System.out::println);
-        }
-        return frase;
+        pessoas.forEach(System.out::println);
+        return pessoas.toString();
     }
 }
