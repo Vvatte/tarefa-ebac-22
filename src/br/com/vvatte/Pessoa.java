@@ -20,15 +20,15 @@ public class Pessoa {
         System.out.println(" ");
         System.out.println("As pessoas do sexo feminino são:");
 
-        String mulher = mulheres(frase);
+        List<String> mulheres = mulheres(frase);
 
-        System.out.println(mulher);
+        System.out.println(mulheres);
     }
 
-    public static String mulheres(String frase) {
+    public static List<String> mulheres(String frase) {
         String[] arrayNomes = frase.split(",");
         return Stream.of(arrayNomes)
                 .filter(pessoa -> pessoa.endsWith("-f"))
-                .toList().toString();
+                .toList();
     }
 }
