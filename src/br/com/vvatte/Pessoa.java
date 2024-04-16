@@ -24,12 +24,13 @@ public class Pessoa {
 
     }
 
-    public void mulheres(String frase) {
+    public String mulheres(String frase) {
         String[] arrayNomes = frase.split(",");
         Stream<String> pessoas = List.of(arrayNomes).stream()
                 .filter(pessoa -> pessoa.endsWith("-f"));{
 
             pessoas.forEach(System.out::println);
         }
+        return frase;
     }
 }
