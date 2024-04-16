@@ -9,7 +9,7 @@ public class PessoaTest {
         Pessoa pessoa = new Pessoa();
         pessoa.mulheres("Luciano-m,Angela-f,ana-f");
 
-        Assert.assertEquals("Angela-f,Ana-f", "Angela-f,Ana-f");
+        Assert.assertNotEquals("luciano-m", pessoa);
 
     }
 }
